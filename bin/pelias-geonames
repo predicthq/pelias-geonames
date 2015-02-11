@@ -8,6 +8,7 @@ program
   .usage('[options]')
   .option('-c, --countrycodes', 'list all ISO country datasets available for download')
   .option('-i, --import [ISO]', 'import geoname data for [ISO country code] in to Pelias')
+  .option('-p, --popular_names', 'import geoname data with popularity in to Pelias')
   .option('-d, --download [ISO]', 'locally cache data from geonames.org for [ISO country code]')
   .option('-m, --meta', 'download & update geonames metadata files')
   .parse(process.argv);
@@ -21,6 +22,11 @@ else if( program.import ){
   var isocode = validateISOCode( program.import );
   var task = require('../task/import');
   task( isocode === 'ALL' ? 'allCountries' : isocode );
+}
+
+else if( program.popular_names ){
+  var task = require('../task/set_popularity');
+  task();
 }
 
 else if( program.download ){

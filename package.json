@@ -40,11 +40,13 @@
     "pad": "0.0.4",
     "pelias-config": "latest",
     "pelias-dbclient": "0.0.0",
-    "pelias-model": "git://github.com/pelias/model#multiplier",
+    "pelias-model": "git://github.com/pelias/model#popularity-photos",
     "pelias-suggester-pipeline": "git://github.com/pelias/suggester-pipeline#using-model-weights",
     "progress": "^1.1.5",
     "progress-stream": "^0.4.0",
     "request": "^2.34.0",
+    "shapefile-stream": "latest",
+    "elasticsearch": "latest",
     "through2": "^0.6.1",
     "precommit-hook": "1.0.7"
   }
