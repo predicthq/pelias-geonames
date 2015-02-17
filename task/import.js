@@ -58,7 +58,7 @@ module.exports = function( filename ){
     .pipe( suggester.pipeline )
     .pipe( through.obj( function( item, enc, next ){
       this.push({
-        _index: 'pelias',
+        _index: 'pelias_ngram',
         _type: item.getType(),
         _id: item.getId(),
         data: item
