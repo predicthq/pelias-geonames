@@ -50,7 +50,7 @@ function mapper( data, enc, next ){
     if( typeof data.feature_code === 'string' ){
       var featureCode = data.feature_code.toUpperCase();
       if( categoryMapping.hasOwnProperty( featureCode ) ){
-        var peliasCategories = categoryMapping[ featureCode ];
+        var peliasCategories = categoryMapping[ featureCode].concat( categoryMapping[ data._id ] || [] );
         peliasCategories.forEach( function ( category ){
           try {
             record.addCategory( category );
